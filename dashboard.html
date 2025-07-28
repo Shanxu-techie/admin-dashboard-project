@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <script type="module" src="dashboard.js" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .border-dark{
+                border: 0.5px solid #E2E8F04D;
+            }
+            .custom-shadow{
+                box-shadow: 0px 3.5px 5.5px 0px #00000005;
+            }
+        }
+
+    </style>
+</head>
+
+<body
+    class="bg-[url('assets/images/dashboard/dashboard-bg.jpg')] bg-cover bg-center bg-no-repeat backdrop-blur-[272px] font-jakarta"
+    data-page="dashboard">
+    <div class="flex">
+        <aside id="sidebar-container" class="xl:w-[261px]"></aside>
+        <main class="flex-1 items-center justify-center p-4">
+            <header id="breadcrumbs-container">
+
+            </header>
+            <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 my-6 gap-6">
+                <div class="rounded-[20px] backdrop-blur-[120px] p-5 flex justify-between items-center"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 38, 0.74) 28.26%, rgba(26, 31, 55, 0.5) 91.2%);">
+                    <div>
+                        <h2 class="text-gray-400 text-[12px]">Today’s Money</h2>
+                        <p>
+                            <span class="font-bold text-[18px] leading-[1.4] text-white">$53,000</span>
+                            <span class="font-bold text-[14px] leading-[1.4] text-[#01B574]">+55%</span>
+                        </p>
+                    </div>
+                    <div class="bg-[#0075FF] rounded-[12px] text-white p-3"
+                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                        <ion-icon name="wallet" class="block text-[24px]"></ion-icon>
+                    </div>
+                </div>
+                <div class="rounded-[20px] backdrop-blur-[120px] p-5 flex justify-between items-center"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 38, 0.74) 28.26%, rgba(26, 31, 55, 0.5) 91.2%);">
+                    <div>
+                        <h2 class="text-gray-400 text-[12px]">Today’s Users</h2>
+                        <p>
+                            <span class="font-bold text-[18px] leading-[1.4] text-white">2,300</span>
+                            <span class="font-bold text-[14px] leading-[1.4] text-[#01B574]">+5%</span>
+                        </p>
+                    </div>
+                    <div class="bg-[#0075FF] rounded-[12px] text-white p-3"
+                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                        <ion-icon name="globe-outline" class="block text-[24px]"></ion-icon>
+                    </div>
+                </div>
+                <div class="rounded-[20px] backdrop-blur-[120px] p-5 flex justify-between items-center"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 38, 0.74) 28.26%, rgba(26, 31, 55, 0.5) 91.2%);">
+                    <div>
+                        <h2 class="text-gray-400 text-[12px]">New Clients</h2>
+                        <p>
+                            <span class="font-bold text-[18px] leading-[1.4] text-white">+3,052</span>
+                            <span class="font-bold text-[14px] leading-[1.4] text-red-500">-14%</span>
+                        </p>
+                    </div>
+                    <div class="bg-[#0075FF] rounded-[12px] text-white p-3"
+                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                        <ion-icon name="document-text" class="block text-[24px]"></ion-icon>
+                    </div>
+                </div>
+                <div class="rounded-[20px] backdrop-blur-[120px] p-5 flex justify-between items-center"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 38, 0.74) 28.26%, rgba(26, 31, 55, 0.5) 91.2%);">
+                    <div>
+                        <h2 class="text-gray-400 text-[12px]">Total Sales</h2>
+                        <p>
+                            <span class="font-bold text-[18px] leading-[1.4] text-white">$173,000</span>
+                            <span class="font-bold text-[14px] leading-[1.4] text-[#01B574]">+8%</span>
+                        </p>
+                    </div>
+                    <div class="bg-[#0075FF] rounded-[12px] text-white p-3"
+                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                        <ion-icon name="cart" class="block text-[24px]"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-stretch gap-4 flex-wrap 2xl:flex-nowrap">
+                <div class="w-full 2xl:w-1/2">
+                    <div class="relative p-6 rounded-[20px] overflow-hidden h-full">
+                        <img src="assets/images/dashboard/card-bg.jpg" alt="Background"
+                            class="absolute inset-0 w-full h-full object-cover z-0" />
+
+                        <div class="absolute inset-0 z-10"
+                            style="background: linear-gradient(to right, rgba(6, 11, 38, 0.89) 28.26%, rgba(26, 31, 55, 0.3) 50%, rgba(0,0,0,0) 100%);">
+                        </div>
+
+                        <div class="relative z-20 w-1/2">
+                            <p class="text-[14px] text-gray-400">Welcome back,</p>
+                            <h2 class="font-bold text-[28px] text-white mb-2">Mark Johnson</h2>
+                            <p class="leading-[24px] text-gray-400 mb-[100px]">
+                                <span class="block">Glad to see you again!</span>
+                                <span class="block">Ask me anything.</span>
+                            </p>
+                            <a href="" class="text-[12px] text-white gap-1 flex items-center">
+                                Tap to record
+                                <ion-icon name="arrow-forward" class="block"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row flex-nowrap gap-4 flex-1 items-stretch">
+                    <div class="w-full 2xl:w-[400px]">
+                        <div class="backdrop-blur-[120px] p-6 rounded-[20px] h-full flex flex-col relative"
+                            style="background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%);">
+                            <div class="mb-6">
+                                <h2 class="text-white font-bold text-[18px] leading-[1.4]">Satisfaction Rate</h2>
+                                <p class="text-[14px] text-gray-400">From all projects</p>
+                            </div>
+
+                            <div class="relative mb-[-80px] self-center">
+                                <canvas id="blue-donut" class="w-[180px] h-[180px]"></canvas>
+                                <div class="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+
+                                    <p class="bg-[#0075FF] rounded-full p-2">
+                                        <ion-icon name="happy-outline" class="text-[30px] text-white block"></ion-icon>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="relative rounded-[20px] backdrop-blur-[120px] text-center p-4 mt-2"
+                                style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);">
+                                <div class="absolute top-4 right-6 left-6 flex items-center justify-between">
+                                    <span class="text-gray-400 text-[12px]">0%</span>
+                                    <span class="text-gray-400 text-[12px]">100%</span>
+                                </div>
+                                <div class="flex flex-col justify-center items-center">
+                                    <p class="text-white text-[28px] font-bold">95%</p>
+                                    <h3 class="text-gray-400 text-[12px]">Based on likes</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <div class="rounded-[20px] backdrop-blur-[120px] p-6 h-full"
+                            style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(14, 21, 58, 0.71) 91.2%);">
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-white text-[18px] font-bold leading-[1.4]">Referral Tracking</h2>
+                                <button class="rounded-[12px] p-2 bg-[rgba(255,255,255,0.08)]" type="button">
+                                    <ion-icon name="ellipsis-horizontal"
+                                        class="text-blue-400 text-[24px] block"></ion-icon>
+                                </button>
+                            </div>
+                            <div
+                                class="p-4 mt-4 flex flex-col sm:flex-row gap-12 justify-around lg:justify-between items-center">
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex-1 rounded-[20px] backdrop-blur-[120px] pt-3 ps-5 pb-6 pe-16"
+                                        style="background: linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%);">
+                                        <h3 class="text-[14px] text-gray-400">Invited</h3>
+                                        <p class="font-bold text-[18px] leading-[1.4] text-white">145 people</p>
+                                    </div>
+                                    <div class="flex-1 rounded-[20px] backdrop-blur-[120px] pt-3 ps-5 pb-6 pe-16"
+                                        style="background: linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%);">
+                                        <h3 class="text-[14px] text-gray-400">Bonus</h3>
+                                        <p class="font-bold text-[18px] leading-[1.4] text-white">1,465</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-center relative w-[200px] h-[200px]">
+
+                                    <canvas class="w-full h-full block" id="green-donut"></canvas>
+
+                                    <div class="absolute text-center">
+                                        <h3 class="text-[14px] text-gray-400">Safety</h3>
+                                        <p class="text-white text-[50px] font-bold leading-[1]">9.3</p>
+                                        <p class="text-[14px] text-gray-400 pt-1">Total Score</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex flex-col lg:flex-row gap-4">
+                <!-- first card -->
+                <div class="p-4 backdrop-blur-[120px] rounded-[20px] w-full lg:w-1/2 2xl:w-[60%]"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);">
+                    <div class="pt-3">
+                        <h2 class="text-white font-bold text-[18px] leading-[1.4]">Sales overview</h2>
+                        <p>
+                            <span class="font-bold text-[14px] leading-[1.4] text-[#01B574]">(+5) more </span>
+                            <span class="text-[14px] leading-[1.4] text-gray-400">in 2021</span>
+                        </p>
+                    </div>
+                    <div id="line-chart" class="cursor-crosshair sm:w-full" style="width: clamp(250px, 80vw, 100%);"></div>
+                </div>
+                <!-- second card -->
+                <div class="backdrop-blur-[120px] rounded-[20px] p-4 w-full lg:w-1/2 2xl:w-[40%] flex flex-col"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);">
+                    <!-- chart -->
+                    <div id="bar-chart" class="backdrop-blur-[120px] rounded-[20px] p-4 mb-6 sm:w-full sm:self-center"
+                        style="background: linear-gradient(126.97deg, #060C29 28.26%, rgba(4, 12, 48, 0.5) 91.2%); width: clamp(250px, 80vw, 100%);">
+                    </div>
+                    <!--data below chart-->
+                    <div>
+                        <div>
+                            <h2 class="font-bold text-[18px] leading-[1.4] text-white">Active Users</h2>
+                            <p class="text-[14px] leading-[1.4]">
+                                <span class="font-bold text-[#01B574]">
+                                    (+23)
+                                </span>
+                                <span class="text-gray-400">
+                                    than last week
+                                </span>
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 mb-4">
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-3">
+                                    <span class="bg-[#0075FF] rounded-[6px] p-1"
+                                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                        <ion-icon name="wallet" class="block text-white text-[12px]"></ion-icon>
+                                    </span>
+                                    <h3 class="text-[14px] leading-[1.5] pe-6 text-gray-400">Users</h3>
+                                </div>
+                                <p class="font-bold text-[18px] leading-[1.4] text-white my-2">32,984</p>
+                                <div class="rounded-full w-full bg-[#2D2E5F] h-[4px]">
+                                    <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-3">
+                                    <span class="bg-[#0075FF] rounded-[6px] p-1"
+                                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                        <ion-icon name="rocket-sharp" class="block text-white text-[12px]"></ion-icon>
+                                    </span>
+                                    <h3 class="text-[14px] leading-[1.5] pe-6 text-gray-400">Clicks</h3>
+                                </div>
+                                <p class="font-bold text-[18px] leading-[1.4] text-white my-2">2,42m</p>
+                                <div class="rounded-full w-full bg-[#2D2E5F] h-[4px]">
+                                    <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-3">
+                                    <span class="bg-[#0075FF] rounded-[6px] p-1"
+                                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                        <ion-icon name="cart" class="block text-white text-[12px]"></ion-icon>
+                                    </span>
+                                    <h3 class="text-[14px] leading-[1.5] pe-6 text-gray-400">Sales</h3>
+                                </div>
+                                <p class="font-bold text-[18px] leading-[1.4] text-white my-2">2,400$</p>
+                                <div class="rounded-full w-full bg-[#2D2E5F] h-[4px]">
+                                    <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-3">
+                                    <span class="bg-[#0075FF] rounded-[6px] p-1"
+                                        style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                        <ion-icon name="build" class="block text-white text-[12px]"></ion-icon>
+                                    </span>
+                                    <h3 class="text-[14px] leading-[1.5] pe-6 text-gray-400">Items</h3>
+                                </div>
+                                <p class="font-bold text-[18px] leading-[1.4] text-white my-2">320</p>
+                                <div class="rounded-full w-full bg-[#2D2E5F] h-[4px]">
+                                    <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex gap-4 flex-col lg:flex-row">
+                <div class="backdrop-blur-[120px] p-4 rounded-[20px] w-full lg:w-[60%] 2xl:w-[70%]"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);">
+                    <div class="flex justify-between align-start mb-4">
+                        <div class="mt-2">
+                            <h2 class="font-bold text-[18px] leading-[1.4] text-white">Projects</h2>
+                            <div class="text-[14px] leading-[1.4] text-gray-400 flex gap-1 mt-2">
+                                <ion-icon name="checkmark-circle" class="text-green-500 block text-[16px]"></ion-icon>
+                                <span class="font-bold">30 done</span>
+                                <span>this month</span>
+                            </div>
+                        </div>
+                        <div class="mt-1">
+                            <ion-icon name="ellipsis-vertical" class="block text-gray-400 text-[20px]"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-[80vw] sm:max-w-none overflow-x-auto sm:overflow-x-visible">
+                        <table class="min-w-[800px] sm:min-w-full w-full">
+                            <tr class="text-gray-400 text-[10px] leading-[1.5] text-left">
+                                <th class="py-2">COMPANIES</th>
+                                <th>MEMBERS</th>
+                                <th>BUDGET</th>
+                                <th>COMPLETION</th>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/dashboard/adobe.svg" alt="adobe"
+                                            class="block w-[20px] h-[20px]">
+                                        <p>Chakra Soft UI Version</p>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex -space-x-2 items-center ">
+                                        <img src="assets/images/dashboard/avatar-1.jpg" alt="avatar 1"
+                                            class="rounded-full w-[18px] h-[18px]">
+                                        <img src="assets/images/dashboard/avatar-2.jpg" alt="avatar 2"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-3.jpg" alt="avatar 3"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-4.jpg" alt="avatar 4"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-5.jpg" alt="avatar 5"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                    </div>
+                                </td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">$14,000</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">
+                                    <p>60%</p>
+                                    <div class="progress-bar rounded-full w-[80%] bg-[#2D2E5F] h-[3px]" data-progress="60">
+                                        <div class="inner-bar h-full bg-[#0075FF] rounded-full"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/dashboard/progress-track.svg" alt="progress track"
+                                            class="block w-[20px] h-[20px]">
+                                        <p>Add Progress Track</p>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex -space-x-2 items-center ">
+                                        <img src="assets/images/dashboard/avatar-1.jpg" alt="avatar 1"
+                                            class="rounded-full w-[18px] h-[18px]">
+                                        <img src="assets/images/dashboard/avatar-2.jpg" alt="avatar 2"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                    </div>
+                                </td>
+                                <td class="font-bold py-4">$3,000</td>
+                                <td class="font-bold py-4">
+                                    <p>10%</p>
+                                    <div class="progress-bar rounded-full w-[80%] bg-[#2D2E5F] h-[3px]" data-progress="10">
+                                        <div class="inner-bar h-full bg-[#0075FF] rounded-full"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/dashboard/fix-errors.svg" alt="fix errors"
+                                            class="block w-[20px] h-[20px]">
+                                        <p>Fix Platform Errors</p>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex -space-x-2 items-center ">
+                                        <img src="assets/images/dashboard/avatar-1.jpg" alt="avatar 1"
+                                            class="rounded-full w-[18px] h-[18px]">
+                                        <img src="assets/images/dashboard/avatar-2.jpg" alt="avatar 2"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                    </div>
+                                </td>
+                                <td class="font-bold py-4">Not set</td>
+                                <td class="font-bold py-4">
+                                    <p>100%</p>
+                                    <div class="progress-bar rounded-full w-[80%] bg-[#2D2E5F] h-[3px]" data-progress="100">
+                                        <div class="inner-bar h-full bg-[#0075FF] rounded-full"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/dashboard/spotify.svg" alt="spotify"
+                                            class="block w-[20px] h-[20px]">
+                                        <p>Launch our Mobile App</p>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex -space-x-2 items-center ">
+                                        <img src="assets/images/dashboard/avatar-1.jpg" alt="avatar 1"
+                                            class="rounded-full w-[18px] h-[18px]">
+                                        <img src="assets/images/dashboard/avatar-2.jpg" alt="avatar 2"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-3.jpg" alt="avatar 3"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-4.jpg" alt="avatar 4"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                    </div>
+                                </td>
+                                <td class="font-bold py-4">$32,000</td>
+                                <td class="font-bold py-4">
+                                    <p>100%</p>
+                                    <div class="progress-bar rounded-full w-[80%] bg-[#2D2E5F] h-[3px]" data-progress="100">
+                                        <div class="inner-bar h-full bg-[#0075FF] rounded-full"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/dashboard/add-pricing.svg" alt="add pricing"
+                                            class="block w-[20px] h-[20px]">
+                                        <p>Add the New Pricing Page</p>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex -space-x-2 items-center">
+                                        <img src="assets/images/dashboard/avatar-1.jpg" alt="avatar 1"
+                                            class="rounded-full w-[18px] h-[18px]">
+                                        <img src="assets/images/dashboard/avatar-2.jpg" alt="avatar 2"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-3.jpg" alt="avatar 3"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-4.jpg" alt="avatar 4"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                        <img src="assets/images/dashboard/avatar-5.jpg" alt="avatar 5"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                    </div>
+                                </td>
+                                <td class="font-bold py-4">$400</td>
+                                <td class="font-bold py-4">
+                                    <p>25%</p>
+                                    <div class="progress-bar rounded-full w-[80%] bg-[#2D2E5F] h-[3px]" data-progress="25">
+                                        <div class="inner-bar h-full bg-[#0075FF] rounded-full"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/dashboard/invision.svg" alt="invision"
+                                            class="block w-[20px] h-[20px]">
+                                        <p>Redesign New Online Shop</p>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex -space-x-2 items-center ">
+                                        <img src="assets/images/dashboard/avatar-1.jpg" alt="avatar 1"
+                                            class="rounded-full w-[18px] h-[18px]">
+                                        <img src="assets/images/dashboard/avatar-2.jpg" alt="avatr 2"
+                                            class="rounded-full w-[22px] h-[22px] border-2 border-[#121241]">
+                                    </div>
+                                </td>
+                                <td class="font-bold py-4">$7,600</td>
+                                <td class="font-bold py-4">
+                                    <p>40%</p>
+                                    <div class="progress-bar rounded-full w-[80%] bg-[#2D2E5F] h-[3px]" data-progress="40">
+                                        <div class="inner-bar h-full bg-[#0075FF]"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="px-4 py-6 backdrop-blur-[120px] rounded-[20px] w-full lg:w-[40%] 2xl:w-[30%]"
+                    style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%); box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                    <div>
+                        <h2 class="font-bold text-[18px] leading-[1.4] text-white">Orders overview</h2>
+                        <div class="flex my-1 gap-1">
+                            <ion-icon name="checkmark-circle" class="text-green-500 block"></ion-icon>
+                            <p class="text-[14px] leading-[1.4] text-gray-400">
+                                <span class="font-bold">+30%</span>
+                                <span>this month</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="flex gap-4 mt-6">
+                                <div class="pt-1 w-[16px] h-[16px] block">
+                                    <ion-icon name="notifications" class="text-[#0075FF]"></ion-icon>
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-[14px] leading-[1.5]">$2400, Design changes</h3>
+                                    <p class="text-gray-400 text-[12px] leading-[1.5]">22 DEC 7:20 PM</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 mt-6">
+                                <div class="w-[16px] h-[16px] block">
+                                    <ion-icon name="logo-css3" class="text-red-500"></ion-icon>
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-[14px] leading-[1.5]">New order #4219423</h3>
+                                    <p class="text-gray-400 text-[12px] leading-[1.5]">21 DEC 11:21 PM</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 mt-6">
+                                <div class="w-[16px] h-[16px] block">
+                                    <ion-icon name="cart" class="text-blue-400"></ion-icon>
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-[14px] leading-[1.5]">Server Payments for April</h3>
+                                    <p class="text-gray-400 text-[12px] leading-[1.5]">21 DEC 9:28 PM</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 mt-6">
+                                <div class="w-[16px] h-[16px] block">
+                                    <ion-icon name="card" class="text-orange-300"></ion-icon>
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-[14px] leading-[1.5]">New card added for order #3210145</h3>
+                                    <p class="text-gray-400 text-[12px] leading-[1.5]">20 DEC 3:52 PM</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 mt-6">
+                                <div class="w-[16px] h-[16px] block">
+                                    
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-[14px] leading-[1.5]">Unlock packages for Development</h3>
+                                    <p class="text-gray-400 text-[12px] leading-[1.5]">19 DEC 11:35 PM</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4 mt-6">
+                                <div class="w-[16px] h-[16px] block">
+                                    <img src="assets/images/dashboard/adobe.svg" alt="adobe">
+                                </div>
+                                <div>
+                                    <h3 class="text-white text-[14px] leading-[1.5]">New order #9851258</h3>
+                                    <p class="text-gray-400 text-[12px] leading-[1.5]">18 DEC 4:41 PM</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer-container"
+                class="text-white flex flex-col md:flex-row md:justify-between justify-center items-center mt-8">
+
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>
