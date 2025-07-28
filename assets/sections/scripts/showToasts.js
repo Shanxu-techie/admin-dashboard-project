@@ -17,7 +17,7 @@ export function showSuccess(message, redirectURL) {
 export function showFail(message) {
     Swal.fire({
         icon: "error",
-        title: "Login Failed",
+        title: "Error",
         text: message,
     });
 }

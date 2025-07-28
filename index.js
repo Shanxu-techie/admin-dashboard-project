@@ -1,8 +1,8 @@
 import { fetchSection } from "./assets/sections/scripts/include.js";
-import { login } from "./assets/sections/scripts/login.js";
 import { showFail, showSuccess } from "./assets/sections/scripts/showToasts.js";
 import { updateToggleState } from "./assets/sections/scripts/update-toggle.js";
 import { emailValidate, passwordValidate } from "./assets/sections/scripts/validation.js";
+import { authUser } from "./assets/sections/scripts/auth.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("header-container", "assets/sections/partials/header.html");
@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 });
 
 document.querySelectorAll(".toggle-switch").forEach((toggle) => {
-    toggle?.addEventListener("change", () => updateToggleState(toggle));
+    toggle.addEventListener("change", () => updateToggleState(toggle));
 });
 
 document.querySelector("form")?.addEventListener("submit", async (e) => {
@@ -22,13 +22,18 @@ document.querySelector("form")?.addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value.trim();
     const remember = document.getElementById("remember-switch").checked;
 
-    if (!emailValidate(email) || !passwordValidate(password)) {
+    if (!emailValidate(email) | !passwordValidate(password)) {
         return;
     }
     try {
-        const res = await login(email, password, remember);
+        const res = await authUser("login",{email, password, remember});
 
-        const data = await res.json();
+        let data;
+        try {
+            data = await res.json();
+        } catch {
+            throw new Error("Server returned invalid response");
+        }
 
         if (!res.ok) throw new Error(data.message || "Login failed");
 

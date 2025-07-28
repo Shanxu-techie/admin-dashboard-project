@@ -11,7 +11,7 @@ export function emailValidate(email) {
 
 export function nameValidate(name){
     const helpFullName = document.getElementById("help-full-name");
-    if(name.value.trim()===""){
+    if(!name){
         helpFullName.textContent = "Full name is required.";
         return false;
     }

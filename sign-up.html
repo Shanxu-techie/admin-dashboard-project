@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script type="module" src="sign-up.js" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-gradient-dark {
+                background: linear-gradient(to bottom, #0F123B, #090D2E, #020515);
+            }
+            .radial-border{
+                border: 2px solid;
+                border-image-source: radial-gradient(69.43% 69.43% at 49.45% 50%,#FFFFFF 0%,rgba(255, 255, 255, 0) 100%);
+                border-image-slice: 1;
+            }
+            .frosted-bg{
+                background: linear-gradient(117.45deg, rgba(255,255,255,0) -3.91%, rgba(255,255,255,0.039) 75.27%),#0F1535;
+            }
+        }
+    </style>
+</head>
+
+<body class="relative text-white font-jakarta bg-gradient-dark">
+
+    <!--Background Wrapper (image + form) -->
+    <main class="flex min-h-screen items-stretch flex-col md:flex-row">
+
+        <!--Left Side: Image + Text -->
+        <div role="img" aria-label="Futuristic dashboard image"
+            class="w-full min-h-[60vh] md:w-1/2 flex flex-col justify-center items-center bg-[url('assets/images/sign-in/sign-bg.jpg')] bg-center bg-cover bg-no-repeat text-center">
+            <p class="font-normal text-[20px] leading-[100%] tracking-[0.18em] mb-4  mt-16 sm:mt-0">INSPIRED BY THE
+                FUTURE:</p>
+            <p
+                class="font-bold text-[36px] leading-[100%] tracking-[0.18em] text-center text-transparent bg-clip-text bg-gradient-to-r from-white via-white via-[70%] to-[#757A8C]">
+                THE VISION UI DASHBOARD
+            </p>
+        </div>
+
+        <!--Right Side: Form Content -->
+        <div class="w-full md:w-1/2 flex">
+            <div class="md:max-w-[500px] w-full">
+                <div class="mx-8 md:ms-[50px]">
+                    <div class="pt-[24px] mb-[35px] mt-10 md:mt-[180px] text-center">
+                        <h3 class="font-bold text-[30px] leading-[1.3] mb-[10px]">Welcome!</h3>
+                        <p class="text-[14px] leading-[24px] px-10">Use these awesome forms to login or create
+                            new account in your project for free.</p>
+                    </div>
+                    <div class="rounded-[30px] overflow-hidden">
+                        <div class="rounded-[30px] p-[45px] backdrop-blur-[42px] radial-border frosted-bg">
+                            <p class="font-bold text-[18px] leading-[1.3] text-center mb-[24px]">Register with</p>
+                            <div class="mb-[24px] flex gap-2 justify-center items-center">
+                                <div
+                                    class="p-[2px] rounded-[20px] overflow-hidden bg-[linear-gradient(135deg,_#ffffff00,_#A0AEC0,_#ffffff00)] w-fit cursor-pointer">
+                                    <div
+                                        class="px-[24px] py-[16px] rounded-[18px] bg-[#0F1535] backdrop-blur-[42px] frosted-bg flex justify-center items-center">
+                                        <button type="button" id="facebook-login">
+                                            <i class="ri-facebook-circle-fill text-white text-[32px]"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div
+                                    class="p-[2px] rounded-[20px] overflow-hidden bg-[linear-gradient(135deg,_#ffffff00,_#A0AEC0,_#ffffff00)] w-fit cursor-pointer">
+                                    <div
+                                        class="px-[24px] py-[16px] rounded-[18px] bg-[#0F1535] backdrop-blur-[42px] frosted-bg flex justify-center items-center">
+                                        <button type="button" id="apple-login">
+                                            <i class="ri-apple-fill text-white text-[32px]"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div
+                                    class="p-[2px] rounded-[20px] overflow-hidden bg-[linear-gradient(135deg,_#ffffff00,_#A0AEC0,_#ffffff00)] w-fit cursor-pointer">
+                                    <div
+                                        class="px-[24px] py-[16px] rounded-[18px] bg-[#0F1535] backdrop-blur-[42px] frosted-bg flex justify-center items-center">
+                                        <button type="button" id="google-login">
+                                            <i class="ri-google-fill text-white text-[32px]"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-gray-400 font-bold text-[18px] leading-[1.4] text-center mb-[14px]">or</p>
+                            <form class="leading-[1.4] text-[14px]" novalidate method="post">
+                                <div class="flex flex-col">
+                                    <label for="full-name" class="mb-2 ms-1">Name</label>
+                                    <input type="text" placeholder="Your full name" id="full-name" autocomplete="name" name="fullName"
+                                        class="bg-transparent px-3 py-2 text-white rounded-[20px] border-2 backdrop-blur-[42px] outline-none border-gray-400 frosted-bg">
+                                    <small id="help-full-name" class="text-red-500 mb-[16px] mt-2 ps-[4px]"></small>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label for="email" class="mb-2 ms-1">Email</label>
+                                    <input type="email" placeholder="Your email address" id="email" autocomplete="email" name="email"
+                                        class="bg-transparent px-3 py-2 text-white rounded-[20px] border-2 backdrop-blur-[42px] outline-none border-gray-400 frosted-bg">
+                                    <small id="help-email" class="text-red-500 mb-[16px] mt-2 ps-[4px]"></small>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label for="password" class="mb-2 ms-1">Password</label>
+                                    <input type="password" placeholder="Your password" id="password" name="password"
+                                        class="bg-transparent px-3 py-2 text-white rounded-[20px] border-2 border-gray-400 backdrop-blur-[42px] outline-none frosted-bg">
+                                    <small id="help-password" class="text-red-500 mb-[16px] mt-2 ps-[4px]"></small>
+                                </div>
+                                <div class="mb-[35px] flex gap-2 items-center">
+                                    <label for="remember-switch">
+                                        <input type="checkbox" class="sr-only toggle-switch" id="remember-switch">
+                                        <div
+                                            class="w-10 h-5 bg-[#1B1F3D] rounded-full relative transition-colors duration-300 switch-bg">
+                                            <div
+                                                class="w-4 h-4 bg-white rounded-full absolute left-0.5 top-0.5 transition-transform duration-300 switch-circle">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="text-[12px]">Remember me</span>
+                                </div>
+                                <button type="submit"
+                                    class="py-3 px-6 bg-[#0075FF] backdrop-blur-[120px] font-bold text-[12px] leading-[1.5] tracking-[0%] text-center align-middle rounded-[12px] w-full">SIGN
+                                    UP</button>
+                            </form>
+                            <p class="mt-[24px] text-center"><span class="text-gray-400">Already have an account?
+                                </span><a href="index.html" class="font-bold">Sign In</a></p>
+                        </div>
+                    </div>
+                </div>
+                <footer id="footer-container"
+                    class="flex text-[#A0AEC0] flex-col px-[50px] text-center mt-10 md:my-[100px]"></footer>
+            </div>
+        </div>
+    </main>
+
+    <!--HEADER (Absolute top on whole screen) -->
+
+    <header id="header-container">
+
+    </header>
+</body>
+
+</html>
