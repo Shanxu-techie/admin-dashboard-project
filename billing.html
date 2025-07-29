@@ -43,40 +43,16 @@
 </head>
 
 <body
-    class="bg-[url('assets/images/shared/dashboard-bg.jpg')] bg-cover bg-center bg-no-repeat backdrop-blur-[272px] font-jakarta min-h-screen" data-page="billing">
+    class="bg-[url('assets/images/shared/dashboard-bg.jpg')] bg-cover bg-center bg-no-repeat backdrop-blur-[272px] font-jakarta min-h-screen"
+    data-page="billing">
     <div class="flex">
         <aside id="sidebar-container" class="xl:w-[261px]"></aside>
         <main class="flex-1 items-center justify-center p-4">
-            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start px-4 py-2">
-                <div class="flex flex-col mt-3">
-                    <div class="text-[12px]">
-                        <span class="text-gray-400">Pages </span>
-                        <span class="text-white">/ Dashboard</span>
-                    </div>
-                    <div class="text-[14px] leading-[1.4]">
-                        <p class="text-white">Dashboard</p>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center mt-3 sm:mt-0">
-                    <div class="bg-[#0F1535] border-dark rounded-[15px] text-[12px] overflow-hidden p-2 flex mx-2">
-                        <span class="text-gray-700 py-[4px] px-[6px]">
-                            <ion-icon name="search-outline" class="block"></ion-icon>
-                        </span>
-                        <input type="text" placeholder="Type here..." class="leading-[1.5] text-gray-400 bg-[#0F1535]">
-                    </div>
-                    <button class="gap-[4px] text-gray-500 text-[12px] flex justify-center items-center p-1 mx-1">
-                        <ion-icon name="person" class="block"></ion-icon>
-                        <span class="leading-[1.5]">Sign In</span>
-                    </button>
-                    <button class="p-1 mx-1">
-                        <ion-icon name="settings" class="text-[12px] text-gray-500 block"></ion-icon>
-                    </button>
-                    <button class="p-1 mx-1">
-                        <ion-icon name="notifications" class="text-[12px] text-gray-500 block"></ion-icon>
-                    </button>
-                </div>
+            <div id="breadcrumbs-container">
+
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:grid-rows-[auto_auto] gap-6 mt-4">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[auto_auto] lg:grid-cols-[1fr_1fr_1.4fr] sm:grid-rows-[auto_auto_auto] md:grid-rows-[auto_auto_auto_auto_auto] lg:grid-rows-[auto_auto_auto] gap-6 mt-4">
 
                 <div
                     class="w-full bg-[url('assets/images/billing/card.jpg')] bg-center bg-cover bg-no-repeat rounded-[20px] overflow-hidden relative flex items-between sm:col-span-1 sm:row-start-1">
@@ -169,7 +145,7 @@
                 <div class="backdrop-blur-[120px] text-white p-6 rounded-[20px] sm:col-span-2 sm:row-start-2"
                     style="background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%);">
 
-                    <div class="flex justify-between items-center">
+                    <div class="flex flex-col justify-center gap-4 sm:flex-row sm:justify-between items-center">
 
                         <h2 class="font-bold text-[18px] leading-[1.4]">Payment Method</h2>
 
@@ -234,7 +210,7 @@
 
                 </div>
 
-                <div class="rounded-[20px] backdrop-blur-[120px] text-white p-6 md:col-start-3 md:row-start-1 md:row-span-2"
+                <div class="rounded-[20px] backdrop-blur-[120px] text-white p-6 sm:col-start-1 sm:col-span-2 md:row-start-3 lg:col-start-3 lg:row-start-1 lg:row-span-2"
                     style="background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%);">
 
                     <div class="flex items-center justify-between">
@@ -319,7 +295,7 @@
 
                 </div>
 
-                <div class="sm:col-span-2 sm:row-start-3 rounded-[20px] backdrop-blur-[120px] p-6"
+                <div class="sm:col-span-2 sm:row-start-3 md:col-start-1 md:col-span-2 md:row-start-4 lg:col-span-2 lg:row-start-3 rounded-[20px] backdrop-blur-[120px] p-6"
                     style="background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%);">
                     <h2 class="text-white font-bold text-[18px] leading-[1.4]">Billing Information</h2>
                     <ul>
@@ -333,7 +309,7 @@
                                     <p>VAT Number: FRB1235476</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-6">
+                            <div class="flex flex-col justify-end gap-2 items-center sm:gap-6 sm:flex-row">
                                 <button class="text-[#F53C2B] flex gap-1">
                                     <ion-icon name="trash-outline" class="block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5]">DELETE</span>
@@ -354,7 +330,7 @@
                                     <p>VAT Number: FRB1235476</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-6">
+                            <div class="flex flex-col justify-end gap-2 items-center sm:gap-6 sm:flex-row">
                                 <button class="text-[#F53C2B] flex gap-1">
                                     <ion-icon name="trash-outline" class="block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5]">DELETE</span>
@@ -375,7 +351,7 @@
                                     <p>VAT Number: FRB1235476</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-6">
+                            <div class="flex flex-col justify-end gap-2 items-center sm:gap-6 sm:flex-row">
                                 <button class="text-[#F53C2B] flex gap-1">
                                     <ion-icon name="trash-outline" class="block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5]">DELETE</span>
@@ -389,99 +365,112 @@
                     </ul>
                 </div>
 
-                <div class="rounded-[20px] md:col-start-3 md:row-start-3 backdrop-blur-[120px] p-6"
+                <div class="rounded-[20px] sm:col-start-1 sm:col-span-2 md:row-start-5 lg:col-start-3 lg:row-start-3 backdrop-blur-[120px] p-6 max-w-[100vw] sm:max-w-none overflow-x-scroll sm:overflow-x-visible w-full"
                     style="background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%);">
+                    <div class="min-w-[400px] sm:min-w-full w-full">
+                        <div class="flex items-center justify-between">
+                            <h2 class="font-bold text-[18px] leading-[1.4] text-white">Your Transactions</h2>
+                            <p class="flex gap-2 items-center">
+                                <ion-icon name="calendar-outline" class="block text-white"></ion-icon>
+                                <span class="text-gray-400 text-[14px] leading-[1.5]">23 - 30 March 2020</span>
+                            </p>
+                        </div>
 
-                    <div class="flex items-center justify-between">
-                        <h2 class="font-bold text-[18px] leading-[1.4] text-white">Your Transactions</h2>
-                        <p class="flex gap-2 items-center">
-                            <ion-icon name="calendar-outline" class="block text-white"></ion-icon>
-                            <span class="text-gray-400 text-[14px] leading-[1.5]">23 - 30 March 2020</span>
-                        </p>
-                    </div>
+                        <div class="mt-4">
+                            <h4 class="text-[10px] leading-[1.5] text-gray-400">NEWEST</h4>
+                            <ul>
+                                <li class="mt-5 flex items-center justify-between">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="w-[36px] h-[36px] border border-red-500 rounded-full bg-transparent p-2 flex items-center justify-center">
+                                            <ion-icon name="arrow-forward"
+                                                class="block text-red-500 rotate-[90deg]"></ion-icon>
+                                        </div>
+                                        <div class="text-[14px]">
+                                            <h5 class="text-white leading-[1.4]">Netflix</h5>
+                                            <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-gray-400 text-[14px] leading-[1.5]">-$2500</div>
+                                </li>
+                                <li class="mt-5 flex items-center justify-between">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="w-[36px] h-[36px] border border-green-500 rounded-full bg-transparent p-2 flex items-center justify-center">
+                                            <ion-icon name="arrow-forward"
+                                                class="block text-green-500 rotate-[-90deg]"></ion-icon>
+                                        </div>
+                                        <div class="text-[14px]">
+                                            <h5 class="text-white leading-[1.4]">Apple</h5>
+                                            <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div class="mt-4">
-                        <h4 class="text-[10px] leading-[1.5] text-gray-400">NEWEST</h4>
-                        <ul>
-                            <li class="mt-5 flex items-center justify-between">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-[36px] h-[36px] border border-red-500 rounded-full bg-transparent p-2 flex items-center justify-center">
-                                        <ion-icon name="arrow-forward" class="block text-red-500 rotate-[90deg]"></ion-icon>
+                        <div class="mt-4">
+                            <h4 class="text-[10px] leading-[1.5] text-gray-400">YESTERDAY</h4>
+                            <ul>
+                                <li class="mt-5 flex items-center justify-between">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="w-[36px] h-[36px] border border-green-500 rounded-full bg-transparent p-2 flex items-center justify-center">
+                                            <ion-icon name="arrow-forward"
+                                                class="block text-green-500 rotate-[-90deg]"></ion-icon>
+                                        </div>
+                                        <div class="text-[14px]">
+                                            <h5 class="text-white leading-[1.4]">Apple</h5>
+                                            <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                        </div>
                                     </div>
-                                    <div class="text-[14px]">
-                                        <h5 class="text-white leading-[1.4]">Netflix</h5>
-                                        <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                    <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
+                                </li>
+                                <li class="mt-5 flex items-center justify-between">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="w-[36px] h-[36px] border border-green-500 rounded-full bg-transparent p-2 flex items-center justify-center">
+                                            <ion-icon name="arrow-forward"
+                                                class="block text-green-500 rotate-[-90deg]"></ion-icon>
+                                        </div>
+                                        <div class="text-[14px]">
+                                            <h5 class="text-white leading-[1.4]">Apple</h5>
+                                            <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="text-gray-400 text-[14px] leading-[1.5]">-$2500</div>
-                            </li>
-                            <li class="mt-5 flex items-center justify-between">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-[36px] h-[36px] border border-green-500 rounded-full bg-transparent p-2 flex items-center justify-center">
-                                        <ion-icon name="arrow-forward" class="block text-green-500 rotate-[-90deg]"></ion-icon>
+                                    <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
+                                </li>
+                                <li class="mt-5 flex items-center justify-between">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="w-[36px] h-[36px] border border-gray-400 rounded-full bg-transparent p-2 flex items-center justify-center">
+                                            <span class="text-gray-400">!</span>
+                                        </div>
+                                        <div class="text-[14px]">
+                                            <h5 class="text-white leading-[1.4]">Apple</h5>
+                                            <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                        </div>
                                     </div>
-                                    <div class="text-[14px]">
-                                        <h5 class="text-white leading-[1.4]">Apple</h5>
-                                        <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                    <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
+                                </li>
+                                <li class="mt-5 flex items-center justify-between">
+                                    <div class="flex gap-4 items-center">
+                                        <div
+                                            class="w-[36px] h-[36px] border border-red-500 rounded-full bg-transparent p-2 flex items-center justify-center">
+                                            <ion-icon name="arrow-forward"
+                                                class="block text-red-500 rotate-[90deg]"></ion-icon>
+                                        </div>
+                                        <div class="text-[14px]">
+                                            <h5 class="text-white leading-[1.4]">Netflix</h5>
+                                            <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
-                            </li>
-                        </ul>
-                    </div>
+                                    <div class="text-gray-400 text-[14px] leading-[1.5]">-$2500</div>
+                                </li>
+                            </ul>
+                        </div>
 
-                    <div class="mt-4">
-                        <h4 class="text-[10px] leading-[1.5] text-gray-400">YESTERDAY</h4>
-                        <ul>
-                            <li class="mt-5 flex items-center justify-between">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-[36px] h-[36px] border border-green-500 rounded-full bg-transparent p-2 flex items-center justify-center">
-                                        <ion-icon name="arrow-forward" class="block text-green-500 rotate-[-90deg]"></ion-icon>
-                                    </div>
-                                    <div class="text-[14px]">
-                                        <h5 class="text-white leading-[1.4]">Apple</h5>
-                                        <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
-                                    </div>
-                                </div>
-                                <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
-                            </li>
-                            <li class="mt-5 flex items-center justify-between">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-[36px] h-[36px] border border-green-500 rounded-full bg-transparent p-2 flex items-center justify-center">
-                                        <ion-icon name="arrow-forward" class="block text-green-500 rotate-[-90deg]"></ion-icon>
-                                    </div>
-                                    <div class="text-[14px]">
-                                        <h5 class="text-white leading-[1.4]">Apple</h5>
-                                        <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
-                                    </div>
-                                </div>
-                                <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
-                            </li>
-                            <li class="mt-5 flex items-center justify-between">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-[36px] h-[36px] border border-gray-400 rounded-full bg-transparent p-2 flex items-center justify-center">
-                                        <span class="text-gray-400">!</span>
-                                    </div>
-                                    <div class="text-[14px]">
-                                        <h5 class="text-white leading-[1.4]">Apple</h5>
-                                        <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
-                                    </div>
-                                </div>
-                                <div class="text-green-500 text-[14px] leading-[1.5]">+$2500</div>
-                            </li>
-                            <li class="mt-5 flex items-center justify-between">
-                                <div class="flex gap-4 items-center">
-                                    <div class="w-[36px] h-[36px] border border-red-500 rounded-full bg-transparent p-2 flex items-center justify-center">
-                                        <ion-icon name="arrow-forward" class="block text-red-500 rotate-[90deg]"></ion-icon>
-                                    </div>
-                                    <div class="text-[14px]">
-                                        <h5 class="text-white leading-[1.4]">Netflix</h5>
-                                        <p class="text-gray-400 leading-[1.5]">27 March 2020, at 12:30 PM</p>
-                                    </div>
-                                </div>
-                                <div class="text-gray-400 text-[14px] leading-[1.5]">-$2500</div>
-                            </li>
-                        </ul>
                     </div>
 
                 </div>
