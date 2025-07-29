@@ -149,7 +149,7 @@
 
                         <h2 class="font-bold text-[18px] leading-[1.4]">Payment Method</h2>
 
-                        <button class="bg-[#0075FF] rounded-[12px] py-3 px-6 font-bold text-[10px] leading-[1.5]">
+                        <button type="button" class="bg-[#0075FF] rounded-[12px] py-3 px-6 font-bold text-[10px] leading-[1.5]">
                             ADD A NEW CARD
                         </button>
 
@@ -158,7 +158,7 @@
                     <div class="mt-5 flex flex-col sm:flex-row justify-between items-center gap-5">
 
                         <div class="rounded-[20px] overflow-hidden p-[2px] w-full sm:w-1/2">
-                            <div class="rounded-[20px] p-[18px] backdrop-blur-[42px] radial-border flex items-center justify-center"
+                            <div class="card-container rounded-[20px] p-3 backdrop-blur-[42px] radial-border flex items-center justify-center gap-2" id="master"
                                 style="background: linear-gradient(117.45deg, rgba(255, 255, 255, 0) -3.91%, rgba(255, 255, 255, 0.039) 75.27%);">
 
                                 <div>
@@ -167,14 +167,22 @@
                                         <circle cx="6.63158" cy="7.49999" r="6.63158" fill="#EB001B" />
                                         <circle cx="14.3685" cy="7.49999" r="6.63158" fill="#F79E1B" />
                                     </svg>
-
                                 </div>
 
-                                <input type="text" inputmode="numeric" maxlength="19" autocomplete="cc-number"
-                                    placeholder="XXXX XXXX XXXX XXXX"
-                                    class="ps-[15px] min-w-[148px] bg-transparent text-white placeholder-white focus:outline-none focus:ring-0 focus:border-none w-full">
+                                <div
+                                    class="card-display text-white text-[14px] flex justify-center items-center gap-1 me-auto">
+                                    <span class="first-twelve"></span>
+                                    <span class="last-four"></span>
+                                </div>
 
-                                <button>
+                                <div class="card-input-container hidden me-auto w-full">
+                                    <input type="text" inputmode="numeric" maxlength="19" autocomplete="cc-number"
+                                        placeholder="XXXX XXXX XXXX XXXX"
+                                        class="card-input bg-transparent text-white placeholder-white focus:outline-none focus:ring-0 focus:border-none w-full text-[14px]">
+                                    <small class="help-text text-red-500 text-[10px]"></small>
+                                </div>
+
+                                <button class="edit-btn" type="button">
                                     <ion-icon name="pencil-outline" class="text-[12px]"></ion-icon>
                                 </button>
 
@@ -183,7 +191,7 @@
 
 
                         <div class="rounded-[20px] overflow-hidden p-[2px] w-full sm:w-1/2">
-                            <div class="rounded-[20px] p-[18px] backdrop-blur-[42px] radial-border flex items-center justify-center"
+                            <div class="card-container rounded-[20px] p-3 backdrop-blur-[42px] radial-border flex items-center justify-center gap-2" id="visa"
                                 style="background: linear-gradient(117.45deg, rgba(255, 255, 255, 0) -3.91%, rgba(255, 255, 255, 0.039) 75.27%);">
 
                                 <div>
@@ -197,11 +205,22 @@
 
                                 </div>
 
-                                <input type="text" inputmode="numeric" maxlength="19" autocomplete="cc-number"
-                                    placeholder="XXXX XXXX XXXX XXXX"
-                                    class="ps-[15px] min-w-[148px] bg-transparent text-white placeholder-white focus:outline-none focus:ring-0 focus:border-none w-full">
+                                <div
+                                    class="card-display text-white text-[14px] flex justify-center items-center gap-1 me-auto">
+                                    <span class="first-twelve"></span>
+                                    <span class="last-four"></span>
+                                </div>
 
-                                <ion-icon name="pencil-outline" class="block text-[12px]"></ion-icon>
+                                <div class="card-input-container hidden me-auto w-full">
+                                    <input type="text" inputmode="numeric" maxlength="19" autocomplete="cc-number"
+                                        placeholder="XXXX XXXX XXXX XXXX"
+                                        class="card-input bg-transparent text-white placeholder-white focus:outline-none focus:ring-0 focus:border-none w-full text-[14px]">
+                                    <small class="help-text text-red-500 text-[10px]"></small>
+                                </div>
+
+                                <button class="edit-btn" type="button">
+                                    <ion-icon name="pencil-outline" class="text-[12px]"></ion-icon>
+                                </button>
 
                             </div>
                         </div>
@@ -215,7 +234,7 @@
 
                     <div class="flex items-center justify-between">
                         <h2 class="font-bold text-[18px] leading-[1.4]">Invoices</h2>
-                        <button class="px-6 py-2 rounded-[12px] bg-[#0075FF] font-bold text-[10px] leading-[1.5]">VIEW
+                        <button type="button" class="px-6 py-2 rounded-[12px] bg-[#0075FF] font-bold text-[10px] leading-[1.5]">VIEW
                             ALL</button>
                     </div>
 
@@ -310,11 +329,11 @@
                                 </div>
                             </div>
                             <div class="flex flex-col justify-end gap-2 items-center sm:gap-6 sm:flex-row">
-                                <button class="text-[#F53C2B] flex gap-1">
+                                <button class="text-[#F53C2B] flex gap-1" type="button">
                                     <ion-icon name="trash-outline" class="block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5]">DELETE</span>
                                 </button>
-                                <button class="flex gap-1">
+                                <button class="flex gap-1" type="button">
                                     <ion-icon name="pencil-outline" class="text-white block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5] text-gray-400">EDIT</span>
                                 </button>
@@ -331,11 +350,11 @@
                                 </div>
                             </div>
                             <div class="flex flex-col justify-end gap-2 items-center sm:gap-6 sm:flex-row">
-                                <button class="text-[#F53C2B] flex gap-1">
+                                <button class="text-[#F53C2B] flex gap-1" type="button">
                                     <ion-icon name="trash-outline" class="block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5]">DELETE</span>
                                 </button>
-                                <button class="flex gap-1">
+                                <button class="flex gap-1" type="button">
                                     <ion-icon name="pencil-outline" class="text-white block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5] text-gray-400">EDIT</span>
                                 </button>
@@ -352,11 +371,11 @@
                                 </div>
                             </div>
                             <div class="flex flex-col justify-end gap-2 items-center sm:gap-6 sm:flex-row">
-                                <button class="text-[#F53C2B] flex gap-1">
+                                <button class="text-[#F53C2B] flex gap-1" type="button">
                                     <ion-icon name="trash-outline" class="block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5]">DELETE</span>
                                 </button>
-                                <button class="flex gap-1">
+                                <button class="flex gap-1" type="button">
                                     <ion-icon name="pencil-outline" class="text-white block"></ion-icon>
                                     <span class="text-[12px] leading-[1.5] text-gray-400">EDIT</span>
                                 </button>
