@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script type="module" src="tables.js" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-[url('assets/images/dashboard-bg.jpg')] bg-cover bg-center bg-no-repeat backdrop-blur-[272px] font-jakarta min-h-screen" data-page="tables">
+    <div class="flex">
+        <aside id="sidebar-container" class="xl:w-[261px]"></aside>
+        <main class="flex-1 items-center justify-center p-4">
+            <div id="breadcrumbs-container">
+
+            </div>
+
+            <div class="backdrop-blur-[120px] p-4 rounded-[20px] w-full mt-6"
+                style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);">
+                <div class="mt-2 mb-6">
+                    <h2 class="font-bold text-[18px] leading-[1.4] text-white">Authors Table</h2>
+                </div>
+                <div class="w-full">
+                    <table
+                        class="w-full [&>thead>tr>th:nth-child(3)]:text-center [&>tbody>tr>td:nth-child(3)]:text-center [&>tbody>tr>td:nth-child(5)>*]:mx-auto">
+                        <thead>
+                            <tr class="text-gray-400 text-[10px] leading-[1.5] text-left">
+                                <th class="py-2">AUTHOR</th>
+                                <th>FUNCTION</th>
+                                <th class="text-center">STATUS</th>
+                                <th class="text-center">EMPLOYED</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-[14px]  text-white">
+                            <tr class="border-t border-[#56577A]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-[40px] h-[40px] rounded-[12px] overflow-hidden flex justify-center items-center"
+                                            style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                            <img src="assets/images/tables/author-1.png" alt="" class="block">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-white leading-[1.4]">Esthera Jackson</p>
+                                            <p class="text-gray-400 leading-[1.5]">esthera@simmmple.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex flex-col">
+                                        <p class="text-white leading-[1.4]">Manager</p>
+                                        <p class="text-gray-400 leading-[1.5]">Organization</p>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-center">
+                                    <button class="px-3 py-1 bg-green-500 rounded-[8px] leading-[1.4]">Online<button>
+                                </td>
+                                <td class="leading-[1.4] py-4 text-center">
+                                    14/06/21
+                                </td>
+                                <td class="py-4 text-gray-400 leading-[1.5] text-center">
+                                    <button type="button">Edit</button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-[40px] h-[40px] rounded-[12px] overflow-hidden flex justify-center items-center"
+                                            style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                            <img src="assets/images/tables/author-2.png" alt="" class="block">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-white leading-[1.4]">Alexa Liras</p>
+                                            <p class="text-gray-400 leading-[1.5]">alexa@simmmple.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex flex-col">
+                                        <p class="text-white leading-[1.4]">Programmer</p>
+                                        <p class="text-gray-400 leading-[1.5]">Developer</p>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-center">
+                                    <button class="px-3 py-1 border border-white rounded-[8px] leading-[1.4]">Offline<button>
+                                </td>
+                                <td class="leading-[1.4] py-4 text-center">
+                                    14/06/21
+                                </td>
+                                <td class="py-4 text-gray-400 leading-[1.5] text-center">
+                                    <button type="button">Edit</button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-[40px] h-[40px] rounded-[12px] overflow-hidden flex justify-center items-center"
+                                            style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                            <img src="assets/images/tables/author-3.png" alt="" class="block">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-white leading-[1.4]">Laurent Michael</p>
+                                            <p class="text-gray-400 leading-[1.5]">laurent@simmmple.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex flex-col">
+                                        <p class="text-white leading-[1.4]">Executive</p>
+                                        <p class="text-gray-400 leading-[1.5]">Projects</p>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-center">
+                                    <button class="px-3 py-1 bg-green-500 rounded-[8px] leading-[1.4]">Online<button>
+                                </td>
+                                <td class="leading-[1.4] py-4 text-center">
+                                    14/06/21
+                                </td>
+                                <td class="py-4 text-gray-400 leading-[1.5] text-center">
+                                    <button type="button">Edit</button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-[40px] h-[40px] rounded-[12px] overflow-hidden flex justify-center items-center"
+                                            style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                            <img src="assets/images/tables/author-4.png" alt="" class="block">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-white leading-[1.4]">Freduardo Hill</p>
+                                            <p class="text-gray-400 leading-[1.5]">freduardo@simmmple.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex flex-col">
+                                        <p class="text-white leading-[1.4]">Manager</p>
+                                        <p class="text-gray-400 leading-[1.5]">Organization</p>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-center">
+                                    <button class="px-3 py-1 bg-green-500 rounded-[8px] leading-[1.4]">Online<button>
+                                </td>
+                                <td class="leading-[1.4] py-4 text-center">
+                                    14/06/21
+                                </td>
+                                <td class="py-4 text-gray-400 leading-[1.5] text-center">
+                                    <button type="button">Edit</button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-[40px] h-[40px] rounded-[12px] overflow-hidden flex justify-center items-center"
+                                            style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                            <img src="assets/images/tables/author-5.png" alt="" class="block">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-white leading-[1.4]">Daniel Thomas</p>
+                                            <p class="text-gray-400 leading-[1.5]">daniel@simmmple.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex flex-col">
+                                        <p class="text-white leading-[1.4]">Programmer</p>
+                                        <p class="text-gray-400 leading-[1.5]">Developer</p>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-center">
+                                    <button class="px-3 py-1 border border-white rounded-[8px] leading-[1.4]">Offline<button>
+                                </td>
+                                <td class="leading-[1.4] py-4 text-center">
+                                    14/06/21
+                                </td>
+                                <td class="py-4 text-gray-400 leading-[1.5] text-center">
+                                    <button type="button">Edit</button>
+                                </td>
+                            </tr>
+                             <tr class="border-t border-[#56577A]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-[40px] h-[40px] rounded-[12px] overflow-hidden flex justify-center items-center" style="box-shadow: 0px 3.5px 5.5px 0px #00000005;">
+                                            <img src="assets/images/tables/author-6.png" alt="" class="block">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <p class="text-white leading-[1.4]">Mark Wilson</p>
+                                            <p class="text-gray-400 leading-[1.5]">mark@simmmple.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4">
+                                    <div class="flex flex-col">
+                                            <p class="text-white leading-[1.4]">Designer</p>
+                                            <p class="text-gray-400 leading-[1.5]">UI/UX Design</p>
+                                        </div>
+                                </td>
+                                <td class="py-4 text-center">
+                                    <button class="px-3 py-1 border border-white rounded-[8px] leading-[1.4]">Offline<button>
+                                </td>
+                                <td class="leading-[1.4] py-4 text-center">
+                                    14/06/21
+                                </td>
+                                <td class="py-4 text-gray-400 leading-[1.5] text-center">
+                                    <button type="button">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="backdrop-blur-[120px] p-4 rounded-[20px] w-full mt-6"
+                style="background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);">
+                <div class="mt-2 mb-6">
+                    <h2 class="font-bold text-[18px] leading-[1.4] text-white">Projects</h2>
+                    <div class="text-[14px] leading-[1.4] text-gray-400 flex gap-1 mt-2">
+                        <ion-icon name="checkmark-circle" class="text-green-500 block text-[16px]"></ion-icon>
+                        <span class="font-bold">30 done</span>
+                        <span>this month</span>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <table
+                        class="w-full [&>thead>tr>th:nth-child(3)]:text-center [&>tbody>tr>td:nth-child(3)]:text-center [&>tbody>tr>td:nth-child(5)>*]:mx-auto">
+                        <thead>
+                            <tr class="text-gray-400 text-[10px] leading-[1.5] text-left">
+                                <th class="py-2">COMPANIES</th>
+                                <th>BUDGET</th>
+                                <th class="md:pe-[66px]">STATUS</th>
+                                <th>COMPLETION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/adobe.svg" alt="" class="block w-[20px] h-[20px]">
+                                        <p>Chakra Soft UI Version</p>
+                                    </div>
+                                </td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">$14,000</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4 md:pe-16">Working</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">
+                                    <p>60%</p>
+                                    <div class="rounded-full w-full bg-[#2D2E5F] h-[3px]">
+                                        <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <ion-icon name="ellipsis-vertical"
+                                        class="block text-gray-400 text-[20px]"></ion-icon>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="assets/images/adobe.svg" alt="" class="block w-[20px] h-[20px]">
+                                        <p>Chakra Soft UI Version</p>
+                                    </div>
+                                </td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">$14,000</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4 md:pe-16">Working</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">
+                                    <p>60%</p>
+                                    <div class="rounded-full w-full bg-[#2D2E5F] h-[3px]">
+                                        <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <ion-icon name="ellipsis-vertical"
+                                        class="block text-gray-400 text-[20px]"></ion-icon>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="images/adobe.svg" alt="" class="block w-[20px] h-[20px]">
+                                        <p>Chakra Soft UI Version</p>
+                                    </div>
+                                </td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">$14,000</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4 md:pe-16">Working</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">
+                                    <p>60%</p>
+                                    <div class="rounded-full w-full bg-[#2D2E5F] h-[3px]">
+                                        <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <ion-icon name="ellipsis-vertical"
+                                        class="block text-gray-400 text-[20px]"></ion-icon>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="images/adobe.svg" alt="" class="block w-[20px] h-[20px]">
+                                        <p>Chakra Soft UI Version</p>
+                                    </div>
+                                </td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">$14,000</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4 md:pe-16">Working</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">
+                                    <p>60%</p>
+                                    <div class="rounded-full w-full bg-[#2D2E5F] h-[3px]">
+                                        <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <ion-icon name="ellipsis-vertical"
+                                        class="block text-gray-400 text-[20px]"></ion-icon>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-[#56577A] text-[14px] text-white leading-[1.4]">
+                                <td class="py-4">
+                                    <div class="flex items-center gap-4">
+                                        <img src="images/adobe.svg" alt="" class="block w-[20px] h-[20px]">
+                                        <p>Chakra Soft UI Version</p>
+                                    </div>
+                                </td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">$14,000</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4 md:pe-16">Working</td>
+                                <td class="font-bold text-[14px] leading-[1.4] py-4">
+                                    <p>60%</p>
+                                    <div class="rounded-full w-full bg-[#2D2E5F] h-[3px]">
+                                        <div class="h-full bg-[#0075FF] rounded-full w-[60%]"></div>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6">
+                                    <ion-icon name="ellipsis-vertical"
+                                        class="block text-gray-400 text-[20px]"></ion-icon>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer id="footer-container"
+                class="text-white flex flex-col md:flex-row md:justify-between justify-center items-center mt-6">
+
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>
