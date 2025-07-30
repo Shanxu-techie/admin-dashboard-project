@@ -1,5 +1,6 @@
 import { fetchSection } from "./assets/sections/scripts/include.js";
 import { highlightCurrentPage } from "./assets/sections/scripts/highlight-current.js"
+import { createDonutProgress } from "./assets/sections/scripts/createDonutProgress.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("sidebar-container", "assets/sections/partials/sidebar.html");
@@ -161,69 +162,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const lineChart = new ApexCharts(document.querySelector("#line-chart"), lineOptions);
     lineChart.render();
-
-    const createDonutProgress = (canvas, options = {}) => {
-        const ctx = canvas.getContext("2d");
-
-        const resize = () => {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-        };
-
-        const clamp01 = (n) => Math.max(0, Math.min(1, n));
-
-        const state = {
-            angle: Math.PI * 0.5,
-            percent: clamp01(options.percent ?? 1),
-            foregroundStops: options.gradientStops || [
-                { stop: 0, color: "rgba(0, 117, 255, 0)" },
-                { stop: 1, color: "#0075FF" }
-            ],
-            bgColor: options.showBg ? (options.bgColor || "#2E2F5C") : null
-        };
-
-        const arc = (col, c, r, start, end) => {
-            ctx.strokeStyle = col;
-            ctx.beginPath();
-            ctx.arc(...c, r, start, end);
-            ctx.stroke();
-        };
-
-        const draw = () => {
-            const w = canvas.width;
-            const h = canvas.height;
-            const c = [w / 2, h / 2];
-            const d = Math.min(...c);
-            const r = d * 0.9;
-
-            const cap = r * 0.15;
-            const capSize = cap / d * Math.PI;
-
-            const start = state.angle;
-            const end = start + Math.PI * 2 * state.percent - capSize;
-
-            ctx.clearRect(0, 0, w, h);
-            ctx.lineWidth = cap;
-            ctx.lineCap = "round";
-
-            if (state.bgColor) {
-                arc(state.bgColor, c, r, 0, Math.PI * 2);
-            }
-
-            const grad = ctx.createConicGradient(start - capSize * 0.5, ...c);
-            state.foregroundStops.forEach(s => grad.addColorStop(s.stop, s.color));
-
-            arc(grad, c, r, start, end);
-        };
-
-        window.addEventListener("resize", () => {
-            resize();
-            draw();
-        });
-
-        resize();
-        draw();
-    };
 
     createDonutProgress(document.getElementById("blue-donut"), {
         percent: 0.70,
