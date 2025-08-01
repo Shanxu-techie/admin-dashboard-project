@@ -4,7 +4,7 @@ export function updateToggleState(toggle) {
     if (toggle.checked) {
         switchBg.classList.add("bg-[#0075FF]");
         switchBg.classList.remove("bg-[#1B1F3D]");
-        switchCircle.style.transform = "translateX(20px)";
+        switchCircle.style.transform = "translateX(18px)";
     } else {
         switchBg.classList.add("bg-[#1B1F3D]");
         switchBg.classList.remove("bg-[#0075FF]");

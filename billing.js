@@ -1,11 +1,11 @@
-import { highlightCurrentPage } from "./assets/sections/scripts/highlight-current.js";
-import { fetchSection } from "./assets/sections/scripts/include.js";
-import { cardNumberValidate } from "./assets/sections/scripts/validation.js";
+import { highlightCurrentPage } from "./components/scripts/highlight-current.js";
+import { fetchSection } from "./components/scripts/include.js";
+import { cardNumberValidate } from "./components/scripts/validation.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
-    await fetchSection("sidebar-container", "assets/sections/partials/sidebar.html");
-    await fetchSection("footer-container", "assets/sections/partials/footer.html");
-    await fetchSection("breadcrumbs-container", "assets/sections/partials/breadcrumbs.html");
+    await fetchSection("sidebar-container", "components/partials/sidebar.html");
+    await fetchSection("footer-container", "components/partials/footer.html");
+    await fetchSection("breadcrumbs-container", "components/partials/breadcrumbs.html");
     highlightCurrentPage();
 
 

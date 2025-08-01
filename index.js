@@ -1,12 +1,12 @@
-import { fetchSection } from "./assets/sections/scripts/include.js";
-import { showFail, showSuccess } from "./assets/sections/scripts/showToasts.js";
-import { updateToggleState } from "./assets/sections/scripts/update-toggle.js";
-import { emailValidate, passwordValidate } from "./assets/sections/scripts/validation.js";
-import { authUser } from "./assets/sections/scripts/auth.js";
+import { fetchSection } from "./components/scripts/include.js";
+import { showFail, showSuccess } from "./components/scripts/showToasts.js";
+import { updateToggleState } from "./components/scripts/update-toggle.js";
+import { emailValidate, passwordValidate } from "./components/scripts/validation.js";
+import { authUser } from "./components/scripts/auth.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
-    await fetchSection("header-container", "assets/sections/partials/header.html");
-    await fetchSection("footer-container", "assets/sections/partials/footer.html");
+    await fetchSection("header-container", "components/partials/header.html");
+    await fetchSection("footer-container", "components/partials/footer.html");
 
     await attemptAutoLogin();
     document.getElementById("email")?.focus();
