@@ -11,3 +11,19 @@ export function updateToggleState(toggle) {
         switchCircle.style.transform = "translateX(0)";
     }
 }
+
+export function updateSidebarToggle(toggleBtn, toggleBtnInner, sidebar, overlay) {
+
+    const isOpen = sidebar.classList.toggle('-translate-x-full') === false;
+    sidebar.classList.toggle('translate-x-0');
+    overlay.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+    if (isOpen) {
+        toggleBtn.classList.add('hidden');
+        toggleBtnInner.classList.remove('hidden');
+    } else {
+        toggleBtn.classList.remove('hidden');
+        toggleBtnInner.classList.add('hidden');
+    }
+
+}

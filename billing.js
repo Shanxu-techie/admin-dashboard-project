@@ -1,13 +1,12 @@
-import { highlightCurrentPage } from "./components/scripts/highlight-current.js";
 import { fetchSection } from "./components/scripts/include.js";
+import { initSidebar } from "./components/scripts/sidebar.js";
 import { cardNumberValidate } from "./components/scripts/validation.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("sidebar-container", "components/partials/sidebar.html");
     await fetchSection("footer-container", "components/partials/footer.html");
     await fetchSection("breadcrumbs-container", "components/partials/breadcrumbs.html");
-    highlightCurrentPage();
-
+    initSidebar();
 
     document.querySelectorAll(".card-container").forEach(container => {
         const cardDisplay = container.querySelector('.card-display');
@@ -22,7 +21,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         let cardNumber = localStorage.getItem(`card-${cardId}`);
 
         if (!cardNumber) {
-            cardNumber = "4242424242424242"; 
+            cardNumber = "4242424242424242";
             localStorage.setItem(`card-${cardId}`, cardNumber);
         }
 
@@ -85,7 +84,7 @@ window.addEventListener("DOMContentLoaded", async () => {
         cardInput.addEventListener('input', function (e) {
             let value = this.value.replace(/\D/g, '');
             this.value = formatCardNumber(value);
-            helpText.textContent='';
+            helpText.textContent = '';
         });
         cardInput.addEventListener('keypress', (e) => {
             if (e.key == "Enter") {

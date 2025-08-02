@@ -1,52 +1,61 @@
-<div class="hidden xl:block fixed top-[10px] left-[10px] rounded-[20px] backdrop-blur-[120px] text-white p-4"
+<button class="xl:hidden fixed top-3 left-3 z-50 text-white transition-all duration-300 ease-in-out"
+    id="mobile-menu-toggle">
+    <ion-icon name="menu" class="text-white block text-xl"></ion-icon>
+</button>
+<aside id="sidebar-wrapper"
+    class="w-[90%] sm:w-[40%] xl:w-[264px] xl:block fixed top-0 left-0 xl:top-[10px] xl:left-[10px] rounded-e-[20px] xl:rounded-[20px] backdrop-blur-[120px] text-white p-4 transform -translate-x-full xl:translate-x-0 transition-transform duration-300 ease-in-out z-40 h-screen xl:h-auto overflow-y-auto xl:overflow-y-visible"
     style="background: linear-gradient(111.84deg, rgba(6, 11, 38, 0.94) 59.3%, rgba(26, 31, 55, 0) 100%);">
-    <h1 class="text-[14px] tracking-[0.18em] mx-12 my-4 logo-text font-bold">
+    <button class="xl:hidden absolute top-[32px] left-[30px] z-50 text-white transition-all duration-300 ease-in-out"
+        id="mobile-menu-toggle-inner">
+        <ion-icon name="menu" class="text-white block text-xl"></ion-icon>
+    </button>
+    <h1 class="text-[14px] tracking-[0.18em] my-4 logo-text font-bold flex items-center justify-center">
         VISION UI FREE</h1>
 
     <div class="p-[0.03em] mt-[26px] mb-2"
         style="background: linear-gradient(90deg, rgba(224, 225, 226, 0) 0%, #E0E1E2 49.52%, rgba(224, 225, 226, 0.15625) 99.04%);">
     </div>
 
-    <div class="flex flex-col justify-between h-full">
+    <div class="flex flex-col justify-between min-h-full">
         <div class="grow">
-            <div class="w-full mx-2 mt-4 mb-[350px]">
+            <div class="w-full px-2 mt-4 mb-[350px]">
                 <ul>
-                    <li class="group hover:bg-[#1A1F37] rounded-[15px] me-4 custom-shadow">
+                    <li class="rounded-[15px] custom-shadow">
                         <a href="dashboard.html" class="flex px-[14px] py-3 gap-4 items-center" data-page="dashboard">
-                            <div class="icon-wrapper bg-[#1A1F37] group-hover:bg-[#0075FF] transition
+                            <div class="icon-wrapper bg-[#1A1F37] transition
                                  duration-200 ease rounded-[12px] p-2 text-center">
                                 <ion-icon name="home"
-                                    class="icon text-[#0075FF] text-[14px] group-hover:text-white transition-colors duration-200 ease block"></ion-icon>
+                                    class="icon text-[#0075FF] text-[14px] transition-colors duration-200 ease block"></ion-icon>
                             </div>
                             <div class="text-[14px]">Dashboard</div>
                         </a>
                     </li>
-                    <li class="group hover:bg-[#1A1F37] rounded-[15px] me-4 custom-shadow">
+                    <li class="rounded-[15px] custom-shadow">
                         <a href="tables.html" class="flex px-[14px] py-3 gap-4 items-center" data-page="tables">
-                            <div class="icon-wrapper bg-[#1A1F37] group-hover:bg-[#0075FF] transition
+                            <div class="icon-wrapper bg-[#1A1F37] transition
                                  duration-200 ease rounded-[12px] p-2 text-center">
                                 <ion-icon name="stats-chart"
-                                    class="icon text-[#0075FF] text-[14px] group-hover:text-white transition-colors duration-200 ease block"></ion-icon>
+                                    class="icon text-[#0075FF] text-[14px] transition-colors duration-200 ease block"></ion-icon>
                             </div>
                             <div class="text-[14px]">Tables</div>
                         </a>
                     </li>
-                    <li class="group hover:bg-[#1A1F37] rounded-[15px] me-4 custom-shadow">
+                    <li class="rounded-[15px] custom-shadow">
                         <a href="billing.html" class="flex px-[14px] py-3 gap-4 items-center" data-page="billing">
-                            <div class="icon-wrapper bg-[#1A1F37] group-hover:bg-[#0075FF] transition
+                            <div class="icon-wrapper bg-[#1A1F37] transition
                                  duration-200 ease rounded-[12px] p-2 text-center">
                                 <ion-icon name="card"
-                                    class="icon text-[#0075FF] text-[14px] group-hover:text-white transition-colors duration-200 ease block"></ion-icon>
+                                    class="icon text-[#0075FF] text-[14px] transition-colors duration-200 ease block"></ion-icon>
                             </div>
                             <div class="text-[14px]">Billing</div>
                         </a>
                     </li>
-                    <li class="rounded-[15px] group hover:bg-[#1A1F37] me-4 custom-shadow">
+                    <li class="rounded-[15px] custom-shadow">
                         <a href="rtl.html" class="flex px-[14px] py-3 gap-4 items-center" data-page="rtl">
-                            <div class="icon-wrapper bg-[#1A1F37] group-hover:bg-[#0075FF] transition
+                            <div class="icon-wrapper bg-[#1A1F37] transition
                                  duration-200 ease rounded-[12px] p-2 text-center">
                                 <ion-icon name="build"
-                                    class="icon text-[#0075FF] text-[14px] group-hover:text-white transition-colors duration-200 ease block"></ion-icon>
+                                    class="icon text-[#0075FF] text-[14px] transition-colors duration-200 ease block"></ion-icon>
                             </div>
                             <div class="text-[14px]">RTL</div>
                         </a>
@@ -54,32 +63,32 @@
                 </ul>
                 <p class="text-[12px] leading-[1.5] ps-[14px] my-[12px]">ACCOUNT PAGES</p>
                 <ul>
-                    <li class="group hover:bg-[#1A1F37] rounded-[15px] me-4  custom-shadow">
+                    <li class="rounded-[15px] me-4  custom-shadow">
                         <a href="profile.html" class="flex px-[14px] py-3 gap-4 items-center" data-page="profile">
-                            <div class="icon-wrapper bg-[#1A1F37] group-hover:bg-[#0075FF] transition
+                            <div class="icon-wrapper bg-[#1A1F37] transition
                                  duration-200 ease rounded-[12px] p-2 text-center">
                                 <ion-icon name="person"
-                                    class="icon text-[#0075FF] text-[14px] group-hover:text-white transition-colors duration-200 ease block"></ion-icon>
+                                    class="icon text-[#0075FF] text-[14px] transition-colors duration-200 ease block"></ion-icon>
                             </div>
                             <div class="text-[14px]">Profile</div>
                         </a>
                     </li>
-                    <li class="group hover:bg-[#1A1F37] rounded-[15px] me-4 custom-shadow">
+                    <li class="rounded-[15px] me-4 custom-shadow">
                         <a href="index.html" class="flex px-[14px] py-3 gap-4 items-center" data-page="index">
-                            <div class="icon-wrapper bg-[#1A1F37] group-hover:bg-[#0075FF] transition
+                            <div class="icon-wrapper bg-[#1A1F37] transition
                                  duration-200 ease rounded-[12px] p-2 text-center">
                                 <ion-icon name="document"
-                                    class="icon text-[#0075FF] text-[14px] group-hover:text-white transition-colors duration-200 ease block"></ion-icon>
+                                    class="icon text-[#0075FF] text-[14px] transition-colors duration-200 ease block"></ion-icon>
                             </div>
                             <div class="text-[14px]">Sign In</div>
                         </a>
                     </li>
-                    <li class="group hover:bg-[#1A1F37] rounded-[15px] me-4 custom-shadow">
+                    <li class="rounded-[15px] me-4 custom-shadow">
                         <a href="sign-up.html" class="flex px-[14px] py-3 gap-4 items-center" data-page="sign-up">
-                            <div class="icon-wrapper bg-[#1A1F37] group-hover:bg-[#0075FF] transition
+                            <div class="icon-wrapper bg-[#1A1F37] transition
                                  duration-200 ease rounded-[12px] p-2 text-center">
                                 <ion-icon name="rocket-sharp"
-                                    class="icon text-[#0075FF] text-[14px] group-hover:text-white transition-colors duration-200 ease block"></ion-icon>
+                                    class="icon text-[#0075FF] text-[14px] transition-colors duration-200 ease block"></ion-icon>
                             </div>
                             <div class="text-[14px]">Sign Up</div>
                         </a>
@@ -104,6 +113,4 @@
             </div>
         </div>
     </div>
-
-
-</div>
+</aside>

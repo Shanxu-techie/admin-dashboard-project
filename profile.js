@@ -1,13 +1,13 @@
-import { highlightCurrentPage } from "./components/scripts/highlight-current.js";
 import { fetchSection } from "./components/scripts/include.js";
 import { createDonutProgress } from "./components/scripts/createDonutProgress.js";
 import {updateToggleState} from "./components/scripts/update-toggle.js";
+import { initSidebar } from "./components/scripts/sidebar.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("sidebar-container", "components/partials/sidebar.html");
     await fetchSection("footer-container", "components/partials/footer.html");
     await fetchSection("breadcrumbs-container", "components/partials/breadcrumbs.html");
-    highlightCurrentPage();
+    initSidebar();
 
     createDonutProgress(document.getElementById("green-donut"), {
         percent: 0.70,
