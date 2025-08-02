@@ -1,6 +1,7 @@
 import { fetchSection } from "./components/scripts/include.js";
 import { createDonutProgress } from "./components/scripts/createDonutProgress.js";
 import { initSidebar } from "./components/scripts/sidebar.js";
+import { updateText } from "./components/scripts/updatePageBreadCrumb.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("sidebar-container", "components/partials/sidebar.html");
@@ -8,6 +9,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("breadcrumbs-container", "components/partials/breadcrumbs.html");
 
     initSidebar();
+    updateText();
+
 
     document.querySelectorAll(".progress-bar").forEach((bar) => {
         const value = bar.dataset.progress;

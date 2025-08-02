@@ -1,5 +1,6 @@
 import { fetchSection } from "./components/scripts/include.js";
 import { initSidebar } from "./components/scripts/sidebar.js";
+import { updateText } from "./components/scripts/updatePageBreadCrumb.js";
 import { cardNumberValidate } from "./components/scripts/validation.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -7,6 +8,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("footer-container", "components/partials/footer.html");
     await fetchSection("breadcrumbs-container", "components/partials/breadcrumbs.html");
     initSidebar();
+    updateText();
 
     document.querySelectorAll(".card-container").forEach(container => {
         const cardDisplay = container.querySelector('.card-display');
