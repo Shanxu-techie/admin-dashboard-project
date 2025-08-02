@@ -1,10 +1,11 @@
-{"name": "admin-dashboard-project",
+{
+  "name": "admin-dashboard-project",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "build:js": "node build.js",
     "build:html": "node build-html.js",
-    "build:copy": "xcopy src\\assets dist\\assets /E /I /Y && xcopy src\\components dist\\components /E /I /Y",
+    "build:copy": "node copy-assets.js",
     "build": "npm run build:js && npm run build:html && npm run build:copy"
   },
   "devDependencies": {
