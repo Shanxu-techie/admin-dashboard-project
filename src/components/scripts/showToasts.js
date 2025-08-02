@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 export function showSuccess(message, redirectURL) {
     Swal.fire({
         toast: true,

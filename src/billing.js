@@ -1,7 +1,7 @@
-import { fetchSection } from "../components/scripts/include.js";
-import { initSidebar } from "../components/scripts/sidebar.js";
-import { updateText } from "../components/scripts/updatePageBreadCrumb.js";
-import { cardNumberValidate } from "../components/scripts/validation.js";
+import { fetchSection } from "./components/scripts/include.js";
+import { initSidebar } from "./components/scripts/sidebar.js";
+import { updateText } from "./components/scripts/updatePageBreadCrumb.js";
+import { cardNumberValidate } from "./components/scripts/validation.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("sidebar-container", "components/partials/sidebar.html");

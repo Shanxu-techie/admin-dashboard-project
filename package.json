@@ -1,11 +1,18 @@
-{
+{"name": "admin-dashboard-project",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "build:js": "esbuild src/index.js --bundle --minify --outfile=dist/index.js",
-    "build:html": "html-minifier-terser src/index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
-    "build": "npm run build:js && npm run build:html"
+    "build:js": "node build.js",
+    "build:html": "node build-html.js",
+    "build:copy": "xcopy src\\assets dist\\assets /E /I /Y && xcopy src\\components dist\\components /E /I /Y",
+    "build": "npm run build:js && npm run build:html && npm run build:copy"
   },
   "devDependencies": {
     "esbuild": "^0.25.8",
     "html-minifier-terser": "^7.2.0"
+  },
+  "dependencies": {
+    "glob": "^11.0.3",
+    "sweetalert2": "^11.22.2"
   }
 }
