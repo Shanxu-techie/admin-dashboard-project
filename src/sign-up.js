@@ -1,8 +1,8 @@
-import { authUser } from "./components/scripts/auth.js";
-import { fetchSection } from "./components/scripts/include.js";
-import { showFail, showSuccess } from "./components/scripts/showToasts.js";
-import { updateToggleState } from "./components/scripts/update-toggle.js";
-import { emailValidate, passwordValidate, nameValidate } from "./components/scripts/validation.js";
+import { authUser } from "../components/scripts/auth.js";
+import { fetchSection } from "../components/scripts/include.js";
+import { showFail, showSuccess } from "../components/scripts/showToasts.js";
+import { updateToggleState } from "../components/scripts/update-toggle.js";
+import { emailValidate, passwordValidate, nameValidate } from "../components/scripts/validation.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("header-container", "components/partials/header.html");

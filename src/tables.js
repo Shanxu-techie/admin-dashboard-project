@@ -1,6 +1,6 @@
-import { fetchSection } from "./components/scripts/include.js";
-import { initSidebar } from "./components/scripts/sidebar.js";
-import { updateText } from "./components/scripts/updatePageBreadCrumb.js";
+import { fetchSection } from "../components/scripts/include.js";
+import { initSidebar } from "../components/scripts/sidebar.js";
+import { updateText } from "../components/scripts/updatePageBreadCrumb.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("sidebar-container", "components/partials/sidebar.html");

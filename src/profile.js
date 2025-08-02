@@ -1,8 +1,8 @@
-import { fetchSection } from "./components/scripts/include.js";
-import { createDonutProgress } from "./components/scripts/createDonutProgress.js";
-import {updateToggleState} from "./components/scripts/update-toggle.js";
-import { initSidebar } from "./components/scripts/sidebar.js";
-import { updateText } from "./components/scripts/updatePageBreadCrumb.js";
+import { fetchSection } from "../components/scripts/include.js";
+import { createDonutProgress } from "../components/scripts/createDonutProgress.js";
+import {updateToggleState} from "../components/scripts/update-toggle.js";
+import { initSidebar } from "../components/scripts/sidebar.js";
+import { updateText } from "../components/scripts/updatePageBreadCrumb.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
     await fetchSection("sidebar-container", "components/partials/sidebar.html");
